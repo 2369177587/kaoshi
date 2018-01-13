@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src="js/vue2.min.js"></script>
+    <style type="text/css">
+        #p{
+            margin-left: 35px;
+            width: 140px;
+           
+             height:30px;
+            background: #EEEEEE;
+            line-height: 30px;
+            color: cornflowerblue;
+        }
+        ul{
+            margin-left: -5px
+        }
+        ul li{
+            list-style-type: none;
+            color: cornflowerblue;
+            width: 140px;
+            height:30px;
+            line-height: 30px;
+        }
+        ul li:hover{
+            background:cornflowerblue;
+            color: white;
+            
+        }
+        .div{
+            position: absolute;
+            left:230px;
+            top:5px
+        }
+        .div>p{
+            color:cornflowerblue;
+            width: 500px;
+            height: 30px;
+        }
+        .p{
+            background-color: blue;
+            width: 500px;
+            height: 30px;
+            color:white;
+            line-height: 30px
+        }
+        .div1{
+            border:1px solid blue;
+        }
+        .div>div>p{
+            margin-top: -0px;
+        }
+        .p1{
+            background-color:#E1F0D9
+        }
+        .div2{
+            border:1px solid #E1F0D9
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <p id="p" @click="a=0">&nbsp;&nbsp;首页</p>
+        <ul>
+            <li @click="a=1">&nbsp;&nbsp;菜单一</li>
+            <li @click="a=2">&nbsp;&nbsp;菜单二</li>
+            <li @click="a=3">&nbsp;&nbsp;菜单三</li>
+            <li @click="a=4">&nbsp;&nbsp;菜单四</li>
+        </ul>
+        <div class="div" v-if="a===0">
+            <p>周考/首页</p>
+            <div class="div1">
+                <p class="p">首页</p> 
+                <h2>我是首页</h2>
+            </div>
+        </div>
+        <div class="div" v-if="a===1">
+            <p>周考/菜单一</p>
+            <div class="div2">
+                <p class="p1">菜单一</p> 
+                <h2>我是菜单一内容</h2>
+            </div>
+        </div>
+        <div class="div" v-else-if="a===2">
+            <p >周考/菜单二</p>
+            <div class="div2">
+                <p class="p1">菜单二</p> 
+                <h2>我是菜单二内容</h2>
+            </div>
+        </div>
+        <div class="div" v-else-if="a===3">
+            <p>周考/菜单三</p>
+            <div class="div2">
+                <p class="p1">菜单三</p> 
+                <h2>我是菜单三内容</h2>
+            </div>
+        </div>
+        <div class="div" v-else-if="a===4">
+            <p>周考/菜单四</p>
+            <div class="div2">
+                <p class="p1">菜单四</p> 
+                <h2>我是菜单四内容</h2>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script type="text/javascript">
+    var vm=new Vue({
+        el:"#box",
+        data:{
+            a:0
+        },
+        
+        
+    });
+</script>
